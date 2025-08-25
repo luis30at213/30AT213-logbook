@@ -12,11 +12,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
         h1 {
             text-align: center;
             color: #333;
@@ -71,6 +66,7 @@
 						<header>
 							<h2>Logbook</h2>
 							<p>Explora mis contactos alrededor del mundo, registrados en este Logbook de radioaficionado.</p>
+							<input type="text" id="filterInput" placeholder="Filtrar por Callsign, Fecha, etc." style="width: 100%; padding: 10px; margin-top: 10px;">
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
@@ -4107,6 +4103,17 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+            <script>
+	// Filtrar filas de la tabla según el valor del input
+	document.getElementById('filterInput').addEventListener('input', function () {
+		const filterValue = this.value.toLowerCase();
+		const rows = document.querySelectorAll('.logbook-table tbody tr');
+		rows.forEach(row => {
+			const rowText = row.textContent.toLowerCase();
+			row.style.display = rowText.includes(filterValue) ? '' : 'none';
+		});
+	});
+</script>
 
 	</body>
 </html>
