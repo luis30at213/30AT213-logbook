@@ -1,23 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>30AT213 Logbook - Luis Enrique</title>
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>30AT213 Logbook - Luis Enrique</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
-        h1 { color: #333; }
-        table { width: 100%; border-collapse: collapse; background-color: #fff; }
-        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
-        th { background-color: #e0e0e0; }
-        caption { font-size: 1.2em; margin-bottom: 10px; }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .logbook-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+        .logbook-table th, .logbook-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        .logbook-table th {
+            background-color: #eaeaea;
+        }
+        @media (max-width: 768px) {
+            .logbook-table th, .logbook-table td {
+                font-size: 12px;
+                padding: 6px;
+            }
+        }
     </style>
-</head>
-<body>
-    <h1>30AT213 Logbook - Luis Enrique</h1>
-    <p>Welcome to my 11-meter band logbook. Here you can find my recent QSOs.</p>
-    <table>
-        <caption>QSO Log</caption>
-        <thead>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">30AT213 - Luis Enrique</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="logbook.html">Logbook</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+    
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Logbook</h2>
+							<p>Explora mis contactos alrededor del mundo, registrados en este Logbook de radioaficionado.</p>
+							<input type="text" id="filterInput" placeholder="Filtrar por Callsign, Fecha, etc." style="width: 100%; padding: 10px; margin-top: 10px;">
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
 
 <table border="1" class="dataframe dataframe logbook-table">
   <thead>
@@ -4113,3 +4165,46 @@
     </tr>
   </tbody>
 </table>
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script>
+	// Filtrar filas de la tabla según el valor del input
+	document.getElementById('filterInput').addEventListener('input', function () {
+		const filterValue = this.value.toLowerCase();
+		const rows = document.querySelectorAll('.logbook-table tbody tr');
+		rows.forEach(row => {
+			const rowText = row.textContent.toLowerCase();
+			row.style.display = rowText.includes(filterValue) ? '' : 'none';
+		});
+	});
+</script>
+
+	</body>
+</html>
