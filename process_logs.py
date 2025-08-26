@@ -13,7 +13,7 @@ divisions = {
     38: "gl", 39: "ao", 40: "li", 41: "nz", 42: "lr", 43: "au",
     44: "za", 45: "rs", 46: "de", 47: "dk", 48: "sa", 49: "es",
     50: "ru", 51: "ad", 52: "fo", 53: "sv", 54: "lu", 55: "gi",
-    56: "fi", 57: "in", 112: "lb", 330: "sk" , 76: "ma", 274: "pn" , 163: "gb-wls", 165: "sar3", 162: "cd", 91: "id", 328: "hr"
+    56: "fi", 57: "in", 112: "lb", 330: "sk" , 76: "ma", 274: "pn" , 163: "gb-wls", 165: "sar1", 162: "cd", 91: "id", 328: "hr"
 }
 
 # Get the directory of the current script
