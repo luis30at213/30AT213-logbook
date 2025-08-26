@@ -13,7 +13,7 @@ divisions = {
     38: "gl", 39: "ao", 40: "li", 41: "nz", 42: "lr", 43: "au",
     44: "za", 45: "rs", 46: "de", 47: "dk", 48: "sa", 49: "es",
     50: "ru", 51: "ad", 52: "fo", 53: "sv", 54: "lu", 55: "gi",
-    56: "fi", 57: "in"
+    56: "fi", 57: "in", 112: "lb"
 }
 
 # Get the directory of the current script
@@ -30,7 +30,7 @@ with open(input_file, mode='r', encoding='utf-8') as csv_file:
     rows = []
     for row in csv_reader:
         # Extract the first 1 or 2 digits from the DX field
-        match = re.match(r"(\d{1,2})", row['DX'])
+        match = re.match(r"(\d{1,3})", row['DX'])
         division_number = int(match.group(1)) if match else None
         country_code = divisions.get(division_number, 'unknown')
         flag_cell = f'<img src="images/flags/{country_code}.png" width="40" height="30" alt="{country_code}">' if country_code != 'unknown' else ''
