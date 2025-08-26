@@ -1,9 +1,13 @@
 import csv
+import os
+
+# Get the directory of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Input and output file paths
-input_file = r".\my_logs.csv"
-template_file = r".\templates\logbook.html"
-output_file = r".\logbook.html"
+input_file = os.path.join(script_dir, "my_logs.csv")
+template_file = os.path.join(script_dir, "templates", "logbook.html")
+output_file = os.path.join(script_dir, "logbook.html")
 
 # Read the CSV file and transform the data
 with open(input_file, mode='r', encoding='utf-8') as csv_file:
